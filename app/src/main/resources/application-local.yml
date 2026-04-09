@@ -25,15 +25,16 @@ spring:
     baseline-on-migrate: true
   ai:
     openai:
-      # 本地联调默认使用占位 Key，避免未配置时启动失败
-      api-key: ${OPENAI_API_KEY:dummy-local-key}
+      # 通义千问 OpenAI 兼容模式，密钥仅通过环境变量注入
+      base-url: ${OPENAI_BASE_URL:https://dashscope.aliyuncs.com/compatible-mode}
+      api-key: ${OPENAI_API_KEY:}
       chat:
         options:
-          model: ${OPENAI_CHAT_MODEL:gpt-4o-mini}
+          model: ${OPENAI_CHAT_MODEL:qwen-plus}
           temperature: ${OPENAI_TEMPERATURE:0.2}
       embedding:
         options:
-          model: ${OPENAI_EMBEDDING_MODEL:text-embedding-3-small}
+          model: ${OPENAI_EMBEDDING_MODEL:text-embedding-v3}
 
 app:
   storage:

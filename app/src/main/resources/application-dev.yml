@@ -24,14 +24,15 @@ spring:
     locations: classpath:db/migration
   ai:
     openai:
+      base-url: ${OPENAI_BASE_URL:https://dashscope.aliyuncs.com/compatible-mode}
       api-key: ${OPENAI_API_KEY:}
       chat:
         options:
-          model: ${OPENAI_CHAT_MODEL:gpt-4o-mini}
+          model: ${OPENAI_CHAT_MODEL:qwen-plus}
           temperature: ${OPENAI_TEMPERATURE:0.2}
       embedding:
         options:
-          model: ${OPENAI_EMBEDDING_MODEL:text-embedding-3-small}
+          model: ${OPENAI_EMBEDDING_MODEL:text-embedding-v3}
 
 app:
   storage:
