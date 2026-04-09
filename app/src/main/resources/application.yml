@@ -55,3 +55,9 @@ app:
       allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:3000}
       allowed-methods: ${APP_CORS_ALLOWED_METHODS:GET,POST,PUT,DELETE,PATCH,OPTIONS}
       allowed-headers: ${APP_CORS_ALLOWED_HEADERS:*}
+  knowledge:
+    task:
+      stream-key: ${KNOWLEDGE_TASK_STREAM_KEY:knowledge:task:stream}
+      group: ${KNOWLEDGE_TASK_GROUP:knowledge-task-group}
+      consumer: ${KNOWLEDGE_TASK_CONSUMER:knowledge-task-consumer-1}
+      poll-interval-ms: ${KNOWLEDGE_TASK_POLL_INTERVAL_MS:3000}

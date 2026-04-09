@@ -24,4 +24,25 @@ public class KnowledgebaseEntity extends BaseEntity {
 
     @Column(name = "status", nullable = false, length = 20)
     private String status;
+
+    @Column(name = "owner_user_id")
+    private Long ownerUserId;
+
+    @Column(name = "document_count", nullable = false)
+    private Integer documentCount;
+
+    @Column(name = "chunk_count", nullable = false)
+    private Integer chunkCount;
+
+    @Column(name = "completed_doc_count", nullable = false)
+    private Integer completedDocCount;
+
+    @Column(name = "failed_doc_count", nullable = false)
+    private Integer failedDocCount;
+
+    @Column(name = "last_indexed_at")
+    private java.time.LocalDateTime lastIndexedAt;
+
+    @Column(name = "deleted", nullable = false)
+    private Boolean deleted;
 }
